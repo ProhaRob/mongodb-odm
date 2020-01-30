@@ -184,7 +184,7 @@ class ProxyFactory extends AbstractProxyFactory
 
             if (null === $documentPersister->load(array('_id' => $id), $proxy)) {
                 if ( ! $this->lifecycleEventManager->documentNotFound($proxy, $id)) {
-                    throw DocumentNotFoundException::documentNotFound(get_class($proxy), $id);
+                    #throw DocumentNotFoundException::documentNotFound(get_class($proxy), $id);
                 }
             }
 
@@ -223,7 +223,7 @@ class ProxyFactory extends AbstractProxyFactory
 
             if (null === $original) {
                 if ( ! $this->lifecycleEventManager->documentNotFound($proxy, $id)) {
-                    #throw DocumentNotFoundException::documentNotFound(get_class($proxy), $id);
+                    throw DocumentNotFoundException::documentNotFound(get_class($proxy), $id);
                 }
             }
 
